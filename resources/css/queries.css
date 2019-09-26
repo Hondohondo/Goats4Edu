@@ -1,0 +1,67 @@
+
+
+/* Big tablets to 1200px --- width smaller than the 1140px row*/
+/*@media only screen and (max-width: 120rem) {*/
+@media only screen and (max-width: 1200px) {
+/*@media only screen and (max-width: 50rem) {*/
+    .hero-text-box {
+        width: 100%;
+        padding: 0 2%;
+    }
+
+    .row {
+        padding: 0 2%;
+    }
+
+}
+
+
+
+
+/* Small tablets to big tablets: from 768px (Ipad) to 1023px */
+/*@media only screen and (max-width: 102.3rem) {*/
+@media only screen and (max-width: 1023px) {
+
+   /* body { font-size: 18px; } */
+    html {
+        font-size: 56.25%;
+    }
+
+    section { padding: 6rem 0; }
+
+}
+
+
+
+
+
+
+
+/* Small phones to small tablets from 481px to 767px */
+/*@media only screen and (max-width: 76.7rem) {*/
+@media only screen and (max-width: 767px) {
+    /*    body { font-size: 16px; }*/
+    html {
+        font-size: 50%;
+    }
+
+    section { padding: 3rem 0;}
+
+    .row,
+    .hero-text-box {
+        padding: 0 4%;
+    }
+
+    .main-nav { display: none;}
+}
+
+
+
+
+
+
+/* Small phones: from 0 to 480px */
+/*@media only screen and (max-width: 48rem) {*/
+@media only screen and (max-width: 480px) {
+
+}
