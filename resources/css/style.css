@@ -9,10 +9,11 @@ Blue color: #2980b9;
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-html {
+html{
     background-color: #fff;
     color: #555555;
     font-family: 'Lato', 'Arial', sans-serif;
@@ -21,9 +22,17 @@ html {
     font-size: 62.5%;
     /*    font-size: 10px; in relation to default 16px by browser*/
     text-rendering: optimizeLegibility;
-/*    overflow-x: hidden;*/
+    overflow-x: hidden;
 /*    overflow-y: hidden;    i have added ... */
+}s
+
+body {
+    /*  i have added all of this in body to try to remove the scrolling problem at the green section... */
+     text-rendering: optimizeLegibility;
+    overflow-x: hidden; 
+    backface-visibility: hidden;
 }
+
 /*
 
 body {
@@ -73,6 +82,7 @@ body {
     text-decoration: none;
     border-radius: 200px;
     color: #fff;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
     transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
@@ -124,6 +134,7 @@ body {
     font-weight: 300;
     text-decoration: none;
     border-radius: 20rem;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
     transition: background-color 0.2s, border 0.2s, color 0.2s;
 
 }
@@ -174,6 +185,9 @@ header {
     position: relative; /*added*/
 
 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/hero.jpg);
+
+
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
     background-size: cover;
     background-position: center;
@@ -187,15 +201,23 @@ header {
     width: 114rem;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
-.logo {
+.logo{
     height: 10rem;
     width: auto;
     float: left;
     margin-top: 2rem;
+}
 
+.logo-other {
+    display: none;
+    height: 5rem;
+    width: auto;
+    float: left;
+    margin-top: .5rem 0;
 }
 
 aside {
@@ -204,6 +226,11 @@ aside {
     margin-top: 4.5rem;
     margin-left: 2.5rem;
 }
+
+
+/* ------------------------------------------ */
+/* -------- MAIN NAVIGATION ------------- */
+/* ------------------------------------------ */
 
 .main-nav {
     float: right;
@@ -226,6 +253,7 @@ aside {
     font-size: 1.8rem;
 /*    font-size: 90%;*/
     border-bottom: 2px solid transparent; /*appear when hovered*/
+    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
 }
 
@@ -233,6 +261,42 @@ aside {
 .main-nav li a:active {
     border-bottom: 2px solid #2980b9;
 }
+
+
+/* ------------------------------------------ */
+/* -------- STICKY NAVIGATION ------------- */
+/* ------------------------------------------ */
+
+.sticky {
+    position: fixed;
+    z-index: 9999; /* Maximum allowed Z-Index */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.97); 
+    box-shadow: 0 .2rem .2rem #efefef;
+}
+
+.sticky .main-nav {
+    margin-top: 1.8rem;
+}
+
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited
+{
+    padding: 1rem 0;
+    color: #555;
+}
+.sticky .logo {
+    display: none;
+}
+.sticky .logo-other {
+    display: block;
+}
+
+
+
 
 /* ------------------------------------------ */
 /* -------- VIDEO ------------- */
@@ -253,6 +317,7 @@ aside {
 .bg-video__content {
     height: 100%;
     width: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -281,7 +346,6 @@ aside {
     top: 8%;
     left: 50%;
     -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 10;
 }
@@ -297,7 +361,8 @@ h1, h2, h3, h4 {
 
 
 h1 {
-    font-size: 4.2rem;
+/*    font-size: 4.2rem; */
+    font-size: 3.6rem; /*added*/
 /*    font-size: 210%;*/
     margin-top: 0;
     margin-bottom: 2rem;
@@ -345,6 +410,8 @@ h4 {
     transition: background-color 0.2s;
 */
 
+    -webkit-transition: background-color 0.7s, border 0.7s, color 0.7s;
+
     transition: background-color 0.7s, border 0.7s, color 0.7s;
 }
 
@@ -391,7 +458,7 @@ h4 {
 .section-features {
     color: #222;
     text-align: center;
-    background-image: -webkit-linear-gradient(rgba(238, 186, 58, 0.95), rgba(224, 174, 52, 0.95)), url(img/pattern-1-min.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(238, 186, 58, 0.95)), to(rgba(224, 174, 52, 0.95))), url(img/pattern-1-min.png);
     background-image: linear-gradient(rgba(238, 186, 58, 0.95), rgba(224, 174, 52, 0.95)), url(img/pattern-1-min.png);
 /*    background-image: linear-gradient(rgba(131, 92, 59, 0.95), rgba(131, 92, 59, 0.95)), url(img/pattern-1-min.png);*/  /*BROWN COLOR*/
     background-attachment: fixed;
@@ -466,6 +533,7 @@ section {
 .story {
     width: 75%;
     margin: 0 auto;
+    -webkit-box-shadow: 0 3rem 6rem rgba(#000, .1);
     box-shadow: 0 3rem 6rem rgba(#000, .1);
     background-color: #fff;
     border-radius: 3px;
@@ -485,6 +553,8 @@ section {
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
 
+    -webkit-transform: translateX(-3rem);
+
     transform: translateX(-3rem);
     position: relative;
 }
@@ -492,9 +562,13 @@ section {
 .story-image {
 /*    width: 100%;*/
     height: 100%;
+    -webkit-transform: translateX(-4rem) scale(1.4);
     transform: translateX(-4rem) scale(1.4);
 
+    -webkit-backface-visibility: hidden;
+
     backface-visibility: hidden;
+    -webkit-transition: all .5s;
     transition: all .5s;
 }
 
@@ -502,13 +576,17 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, 20%);
     transform: translate(-50%, 20%);
     color: #000;
     text-transform: uppercase;
     font-size: 1.7rem;
     text-align: center;
     opacity: 0;
+    -webkit-transition: all .5s;
     transition: all .5s;
+
+    -webkit-backface-visibility: hidden;
 
     backface-visibility: hidden;
 
@@ -516,11 +594,14 @@ section {
 
 .story:hover .story-caption {
     opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
 .story:hover .story-image {
+    -webkit-transform: translateX(-4rem) scale(1);
     transform: translateX(-4rem) scale(1);
+    -webkit-filter: blur(3px) brightness(80%);
     filter: blur(3px) brightness(80%);
 }
 
@@ -532,7 +613,7 @@ section {
 
 
 .main-background {
-    background-image: -webkit-linear-gradient(bottom left, #4ED8F7, #26AFEB 70%);
+    background-image: -webkit-gradient(linear, left bottom, right top, from(#4ED8F7), color-stop(70%, #26AFEB));
     background-image: linear-gradient(to top right, #4ED8F7, #26AFEB 70%);
     color: #F9FAFA;
 }
