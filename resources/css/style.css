@@ -338,6 +338,8 @@ aside {
     background-size: 148vh auto;
     background-repeat: no-repeat;
     background-position: bottom center;
+    
+    overflow-x: hidden;
 /*    background-attachment: fixed;*/
 }
 
@@ -350,6 +352,8 @@ aside {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 10;
+    
+    overflow-x: hidden;
 }
 
 .section-box .bton-full { margin-right: 15px; }
