@@ -24,14 +24,16 @@ html{
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
 /*    overflow-y: hidden;    i have added ... */
-}s
+}
 
+/*
 body {
-    /*  i have added all of this in body to try to remove the scrolling problem at the green section... */
+      i have added all of this in body to try to remove the scrolling problem at the green section... 
      text-rendering: optimizeLegibility;
     overflow-x: hidden; 
     backface-visibility: hidden;
 }
+*/
 
 /*
 
